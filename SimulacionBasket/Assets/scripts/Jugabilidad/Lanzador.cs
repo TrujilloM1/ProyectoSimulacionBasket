@@ -1,0 +1,180 @@
+using UnityEngine;
+
+public class Lanzador : MonoBehaviour
+{
+    [Header("Zona de canasta")]
+    public bool haAnotado = false;
+    public int puntos = 0;
+
+
+    [Header("Límites del área de juego")]
+    public float limiteIzquierdo = -8f;
+    public float limiteDerecho = 8f;
+    public float limiteSuperior = 5f;
+
+    public Vector2 velocidad;
+    public float gravedad = -9.8f;
+    public float velocidadMinima = 0.05f;
+    public float groundY = -3f; // altura del suelo
+
+    [Header("Colisión con tablero")]
+    public Transform tablero;           // Asigna el objeto "Tablero" desde el Inspector
+    public float anchoTablero = 0.5f;   // Mitad del ancho del tablero
+    public float altoTablero = 1.5f;    // Mitad del alto del tablero
+    public float radioPelota = 0.25f;   // Tamaño de la pelota
+    public float reboteTablero = 0.6f;  // Rebote horizontal
+
+    private Vector2 posicion;
+    private bool enMovimiento = true;
+
+    void Start()
+    {
+        posicion = transform.position;
+        velocidad = Vector2.zero;
+        enMovimiento = false;
+        transform.position = posicion;
+    }
+
+    void Update()
+    {
+
+        if (enMovimiento)
+        {
+            // Aplicar gravedad
+            velocidad.y += gravedad * Time.deltaTime;
+
+            // Mover la pelota manualmente
+            posicion += velocidad * Time.deltaTime;
+
+            // Verificar colisión con el suelo (Y mínima)
+            if (posicion.y <= groundY)
+            {
+                posicion.y = groundY;
+                velocidad.y *= -0.6f;       // rebote vertical
+                velocidad.x *= 0.9f;        // fricción
+            }
+
+            // Colisión con el tablero (tipo cuadrado)
+            if (tablero != null)
+            {
+                Vector2 posPelota = posicion;
+                Vector2 posTablero = tablero.position;
+
+                float dx = Mathf.Abs(posPelota.x - posTablero.x);
+                float dy = Mathf.Abs(posPelota.y - posTablero.y);
+
+                bool colisionX = dx < (anchoTablero + radioPelota);
+                bool colisionY = dy < (altoTablero + radioPelota);
+
+                if (colisionX && colisionY)
+                {
+                    Debug.Log("Colisión con el tablero");
+
+                    float overlapX = (anchoTablero + radioPelota) - dx;
+                    float overlapY = (altoTablero + radioPelota) - dy;
+
+                    if (overlapX > overlapY)
+                    {
+                        // Rebote vertical
+                        if (posPelota.y > posTablero.y)
+                        {
+                            posicion.y = posTablero.y + altoTablero + radioPelota;
+                        }
+                        else
+                        {
+                            posicion.y = posTablero.y - altoTablero - radioPelota;
+                        }
+
+                        velocidad.y *= -reboteTablero;
+                    }
+                    else
+                    {
+                        // Rebote horizontal
+                        if (posPelota.x > posTablero.x)
+                        {
+                            posicion.x = posTablero.x + anchoTablero + radioPelota;
+                        }
+                        else
+                        {
+                            posicion.x = posTablero.x - anchoTablero - radioPelota;
+                        }
+
+                        velocidad.x *= -reboteTablero;
+                    }
+                }
+
+            }
+
+            // Detener si la velocidad es muy baja
+            if (velocidad.magnitude < velocidadMinima)
+            {
+                velocidad = Vector2.zero;
+                enMovimiento = false;
+            }
+
+            transform.position = posicion;
+        }
+        // Limitar horizontalmente
+        if (posicion.x <= limiteIzquierdo)
+        {
+            posicion.x = limiteIzquierdo;
+            velocidad.x *= -0.6f; // rebote
+        }
+
+        if (posicion.x >= limiteDerecho)
+        {
+            posicion.x = limiteDerecho;
+            velocidad.x *= -0.6f;
+        }
+
+        // Limitar verticalmente
+        if (posicion.y >= limiteSuperior)
+        {
+            posicion.y = limiteSuperior;
+            velocidad.y *= -0.6f;
+        }
+
+    }
+
+
+
+    public Vector2 GetVelocidad()
+    {
+        return velocidad;
+    }
+
+    public void ReiniciarDesdeInicio()
+    {
+        velocidad = Vector2.zero;
+        posicion = transform.position;
+        transform.position = posicion;
+        enMovimiento = false;
+    }
+
+    public void RelanzarDesdePosicion()
+    {
+        velocidad = new Vector2(6f, 8f); // o alguna velocidad predeterminada
+        enMovimiento = true;
+    }
+    public void RegistrarPunto()
+    {
+        if (!haAnotado)
+        {
+            puntos++;
+            haAnotado = true;
+            Debug.Log("¡Canasta! Puntos: " + puntos);
+        }
+    }
+    public void ActualizarVelocidad(Vector2 nuevaVelocidad)
+    {
+        velocidad = nuevaVelocidad;
+        enMovimiento = true;
+        haAnotado = false;
+    }
+    public int GetPuntos()
+    {
+        return puntos;
+    }
+
+
+}
