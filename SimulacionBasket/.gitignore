@@ -1,0 +1,31 @@
+# Carpetas que Unity genera automáticamente (¡no subir!)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Mm]emoryCaptures/
+sysinfo.txt
+
+# Archivos de cache de paquetes
+[Pp]ackages/packages-lock.json
+
+# VSCode/Visual Studio
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# Archivos del sistema/macOS
+.DS_Store
+Thumbs.db
+
+# Archivos de Unity Collab (si no usas Collab)
+.collabignore
+
+# Archivos de JetBrains Rider
+.idea/
+*.sln.iml
