@@ -43,6 +43,12 @@ public class Lanzador : MonoBehaviour
     public float altoPared = 1.5f;   // Mitad del alto de la pared
     public float rebotePared = 0.6f; // Coeficiente de rebote
     public GameObject paredMovilGO; // referencia al GameObject completo de la pared móvil
+    public Vector3 posicionInicialPared;   // Posición inicial (fuera de cámara)
+    public Vector3 posicionFinalPared;     // Posición final (visible en juego)
+    public float velocidadDescensoPared = 2f; // Velocidad con la que baja la pared
+
+    private bool paredEnJuego = false;
+
 
 
     private Vector2 posicion;
@@ -56,6 +62,7 @@ public class Lanzador : MonoBehaviour
         transform.position = posicion;
 
         gravedad = gravedadBase;
+
     }
 
     void Update()
@@ -169,6 +176,8 @@ public class Lanzador : MonoBehaviour
                 }
             }
 
+
+
             // Colisión con borde izquierdo
             if (bordeIzquierdo != null)
             {
@@ -276,7 +285,7 @@ public class Lanzador : MonoBehaviour
         enMovimiento = true;
     }
 
-    
+    private bool paredActivada = false;  // Agrega esta variable en la clase
     public void RegistrarPunto()
     {
         if (!haAnotado)
@@ -291,11 +300,16 @@ public class Lanzador : MonoBehaviour
                 gravedad = Mathf.Max(gravedadMaxima, gravedad + incrementoGravedadPorPunto);
                 Debug.Log($"Gravedad ajustada: {gravedad}");
             }
-            // Activa la pared móvil cuando se llegue a 9 puntos (o más)
-            if (puntos >= 9 && paredMovilGO != null && !paredMovilGO.activeSelf)
+            // Activar movimiento de la pared móvil cuando puntos >= 9
+            if (puntos >= 2 && paredMovilGO != null && !paredActivada)
             {
-                paredMovilGO.SetActive(true);
-                Debug.Log("Pared móvil activada por dificultad.");
+                Debug.Log("Condición cumplida para activar pared móvil.");
+                ControlParedMovil control = paredMovilGO.GetComponent<ControlParedMovil>();
+                if (control != null)
+                {
+                    control.ActivarMovimiento();
+                    paredActivada = true;  // Marca que ya se activó para no llamar más
+                }
             }
         }
     }

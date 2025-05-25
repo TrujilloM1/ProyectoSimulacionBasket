@@ -19,11 +19,11 @@ public class ControlBotonesMenu : MonoBehaviour
     // Las funciones deben ser públicas para aparecer en el inspector
     public void CargarEscenaJumble()
     {
-        SceneManager.LoadScene("jumble"); // Cambia "jumble" si tu escena tiene otro nombre
+        SceneManager.LoadScene("Nivel1"); 
     }
 
     public void CargarEscenaAjustes()
     {
-        SceneManager.LoadScene("AJUSTES"); // Cambia "AJUSTES" si tu escena tiene otro nombre
+        SceneManager.LoadScene("AJUSTES"); 
     }
 }
