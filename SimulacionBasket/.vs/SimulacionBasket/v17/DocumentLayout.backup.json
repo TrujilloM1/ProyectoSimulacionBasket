@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\lanzador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|c:\\users\\camil\\onedrive\\documentos\\github\\proyectosimulacionbasket\\simulacionbasket\\assets\\scripts\\jugabilidad\\lanzador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\lanzador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|c:\\users\\camil\\onedrive\\documentos\\github\\proyectosimulacionbasket\\simulacionbasket\\assets\\scripts\\jugabilidad\\controlparedmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\controlparedmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\controlparedmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\paredmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\paredmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\notificadorgravedad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notificadorgravedad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\controlajuetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controlajuetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\controlpausa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controlpausa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\detectorcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\detectorcanasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|c:\\users\\camil\\onedrive\\documentos\\github\\proyectosimulacionbasket\\simulacionbasket\\assets\\scripts\\jugabilidad\\paredmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\paredmovil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controlmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\arrastrelanzamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jugabilidad\\arrastrelanzamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87028E22-6600-90DB-7639-6B9AD5B9CA13}|Assembly-CSharp.csproj|C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\assets\\scripts\\jugabilidad\\colisionconborde.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,8 +54,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotificadorGravedad.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\NotificadorGravedad.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\NotificadorGravedad.cs",
+              "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\NotificadorGravedad.cs",
+              "RelativeToolTip": "Assets\\scripts\\NotificadorGravedad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T21:26:22.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ControlAjuetes.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\ControlAjuetes.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\ControlAjuetes.cs",
+              "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\ControlAjuetes.cs",
+              "RelativeToolTip": "Assets\\scripts\\ControlAjuetes.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T20:03:57.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ControlPausa.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\ControlPausa.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\ControlPausa.cs",
+              "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\ControlPausa.cs",
+              "RelativeToolTip": "Assets\\scripts\\ControlPausa.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:11:03.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\UIManager.cs",
+              "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\UIManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\Jugabilidad\\UIManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T17:02:51.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ArrastreLanzamiento.cs",
+              "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\ArrastreLanzamiento.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\ArrastreLanzamiento.cs",
+              "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\ArrastreLanzamiento.cs",
+              "RelativeToolTip": "Assets\\scripts\\Jugabilidad\\ArrastreLanzamiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:10:49.829Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -44,7 +124,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\ControlParedMovil.cs",
               "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\ControlParedMovil.cs",
               "RelativeToolTip": "Assets\\scripts\\Jugabilidad\\ControlParedMovil.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAgAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwDAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T05:44:44.735Z",
               "EditorCaption": ""
@@ -57,13 +137,13 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\ControlMenu.cs",
               "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\ControlMenu.cs",
               "RelativeToolTip": "Assets\\scripts\\ControlMenu.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T04:06:33.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ParedMovil.cs",
               "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\ParedMovil.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\ParedMovil.cs",
@@ -82,14 +162,14 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\Lanzador.cs",
               "ToolTip": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\Lanzador.cs",
               "RelativeToolTip": "Assets\\scripts\\Jugabilidad\\Lanzador.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAmwJgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACEBAAAAAAAAAAAcwDEBAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T22:05:40.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "ColisionConBorde.cs",
               "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\ColisionConBorde.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\ColisionConBorde.cs",
@@ -101,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "DetectorCanasta.cs",
               "DocumentMoniker": "C:\\Users\\camil\\OneDrive\\Documentos\\GitHub\\ProyectoSimulacionBasket\\SimulacionBasket\\Assets\\scripts\\Jugabilidad\\DetectorCanasta.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Jugabilidad\\DetectorCanasta.cs",
@@ -109,8 +189,7 @@
               "RelativeToolTip": "Assets\\scripts\\Jugabilidad\\DetectorCanasta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T22:12:33.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T22:12:33.645Z"
             }
           ]
         }

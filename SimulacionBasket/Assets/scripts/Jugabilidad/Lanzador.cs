@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Lanzador : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Lanzador : MonoBehaviour
     [Header("Zona de canasta")]
     public bool haAnotado = false;
     public int puntos = 0;
+    public int cantidadCestas = 0;  // Cuántas canastas ha hecho el jugador
+
 
     [Header("Sistema de dificultad dinámica")]
     public float gravedadBase = -9.8f;           // Gravedad inicial
@@ -48,9 +51,6 @@ public class Lanzador : MonoBehaviour
     public float velocidadDescensoPared = 2f; // Velocidad con la que baja la pared
 
     private bool paredEnJuego = false;
-
-
-
     private Vector2 posicion;
     private bool enMovimiento = true;
 
@@ -284,15 +284,17 @@ public class Lanzador : MonoBehaviour
         velocidad = new Vector2(6f, 8f); // o alguna velocidad predeterminada
         enMovimiento = true;
     }
-
+    public int score = 0;                 // Puntaje total acumulado
+    public int puntosPorCesta = 10;       // Puntos que vale cada cesta
     private bool paredActivada = false;  // Agrega esta variable en la clase
     public void RegistrarPunto()
     {
         if (!haAnotado)
         {
-            puntos++;
+            puntos++;               // Incrementa número de cestas
+            score += puntosPorCesta; // Suma los puntos al score
             haAnotado = true;
-            Debug.Log($"¡Canasta! Puntos: {puntos}");
+            Debug.Log($"¡Canasta! Cestas: {puntos}, Score: {score}");
 
             // Aumenta la gravedad solo cuando puntos es múltiplo de incrementoCadaXPuntos
             if (puntos % incrementoCadaXPuntos == 0)
@@ -301,7 +303,7 @@ public class Lanzador : MonoBehaviour
                 Debug.Log($"Gravedad ajustada: {gravedad}");
             }
             // Activar movimiento de la pared móvil cuando puntos >= 9
-            if (puntos >= 2 && paredMovilGO != null && !paredActivada)
+            if (puntos >= 6 && paredMovilGO != null && !paredActivada)
             {
                 Debug.Log("Condición cumplida para activar pared móvil.");
                 ControlParedMovil control = paredMovilGO.GetComponent<ControlParedMovil>();
@@ -313,6 +315,8 @@ public class Lanzador : MonoBehaviour
             }
         }
     }
+
+
     public void ActualizarVelocidad(Vector2 nuevaVelocidad)
     {
         velocidad = nuevaVelocidad;

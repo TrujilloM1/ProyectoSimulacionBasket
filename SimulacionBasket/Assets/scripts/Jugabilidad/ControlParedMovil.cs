@@ -17,6 +17,7 @@ public class ControlParedMovil : MonoBehaviour
         transform.position = posicionInicial;
         moviendose = false;
         oscilando = false;
+        
     }
 
     void Update()
@@ -25,20 +26,21 @@ public class ControlParedMovil : MonoBehaviour
         {
             // Baja suavemente hacia la posición visible
             transform.position = Vector3.MoveTowards(transform.position, posicionFinal, velocidadDescenso * Time.deltaTime);
+           
 
-            if (Vector3.Distance(transform.position, posicionFinal) < 0.01f)
+            if (transform.position == posicionFinal)
             {
                 moviendose = false;
                 oscilando = true;
                 posBaseOscilacion = transform.position;
-                Debug.Log("Pared móvil llegó a posición visible y comienza oscilación.");
+              
             }
         }
         else if (oscilando)
         {
-            // Oscila verticalmente a partir de la posición base
             float nuevoY = posBaseOscilacion.y + Mathf.Sin(Time.time * velocidadOscilacion) * amplitudOscilacion;
             transform.position = new Vector3(transform.position.x, nuevoY, transform.position.z);
+            
         }
     }
 
