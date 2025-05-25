@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Lanzador : MonoBehaviour
 {
+
     [Header("Colision Bordes de Aro")]
     public Transform bordeIzquierdo;
     public Transform bordeDerecho;
@@ -13,6 +14,10 @@ public class Lanzador : MonoBehaviour
     public bool haAnotado = false;
     public int puntos = 0;
 
+    [Header("Sistema de dificultad dinámica")]
+    public float gravedadBase = -9.8f;           // Gravedad inicial
+    public float gravedadMaxima = -20f;          // Gravedad límite (máxima)
+    public float incrementoGravedadPorPunto = -5f;  // Cuánto se incrementa la gravedad por cada punto
 
     [Header("Límites del área de juego")]
     public float limiteIzquierdo = -8f;
@@ -40,6 +45,8 @@ public class Lanzador : MonoBehaviour
         velocidad = Vector2.zero;
         enMovimiento = false;
         transform.position = posicion;
+
+        gravedad = gravedadBase;
     }
 
     void Update()
@@ -216,13 +223,22 @@ public class Lanzador : MonoBehaviour
         velocidad = new Vector2(6f, 8f); // o alguna velocidad predeterminada
         enMovimiento = true;
     }
+
+    public int incrementoCadaXPuntos = 3;  // Por ejemplo, cada 3 puntos
     public void RegistrarPunto()
     {
         if (!haAnotado)
         {
             puntos++;
             haAnotado = true;
-            Debug.Log("¡Canasta! Puntos: " + puntos);
+            Debug.Log($"¡Canasta! Puntos: {puntos}");
+
+            // Aumenta la gravedad solo cuando puntos es múltiplo de incrementoCadaXPuntos
+            if (puntos % incrementoCadaXPuntos == 0)
+            {
+                gravedad = Mathf.Max(gravedadMaxima, gravedad + incrementoGravedadPorPunto);
+                Debug.Log($"Gravedad ajustada: {gravedad}");
+            }
         }
     }
     public void ActualizarVelocidad(Vector2 nuevaVelocidad)
