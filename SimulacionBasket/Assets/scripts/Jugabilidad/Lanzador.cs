@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class Lanzador : MonoBehaviour
 {
+    [Header("Colision Bordes de Aro")]
+    public Transform bordeIzquierdo;
+    public Transform bordeDerecho;
+    public float anchoBorde = 0.1f;
+    public float altoBorde = 0.3f;
+    public float reboteBorde = 0.6f;
+
     [Header("Zona de canasta")]
     public bool haAnotado = false;
     public int puntos = 0;
@@ -37,7 +44,6 @@ public class Lanzador : MonoBehaviour
 
     void Update()
     {
-
         if (enMovimiento)
         {
             // Aplicar gravedad
@@ -102,7 +108,60 @@ public class Lanzador : MonoBehaviour
                         velocidad.x *= -reboteTablero;
                     }
                 }
+            }
 
+            // Colisión con borde izquierdo
+            if (bordeIzquierdo != null)
+            {
+                Vector2 posBorde = bordeIzquierdo.position;
+                float dx = Mathf.Abs(posicion.x - posBorde.x);
+                float dy = Mathf.Abs(posicion.y - posBorde.y);
+
+                bool colisionX = dx < (anchoBorde + radioPelota);
+                bool colisionY = dy < (altoBorde + radioPelota);
+
+                if (colisionX && colisionY)
+                {
+                    Debug.Log("Colisión con borde izquierdo");
+
+                    // Ajustar posición fuera del borde
+                    posicion.x = posBorde.x + (posicion.x < posBorde.x ? -(anchoBorde + radioPelota) : (anchoBorde + radioPelota));
+
+                    // Rebote horizontal con límite de velocidad mínima
+                    velocidad.x = -velocidad.x * reboteBorde;
+                    if (Mathf.Abs(velocidad.x) < 0.5f)
+                        velocidad.x = Mathf.Sign(velocidad.x) * 0.5f;
+
+                    // Suavizar velocidad vertical
+                    velocidad.y *= 0.8f;
+                }
+            }
+
+            // Colisión con borde derecho
+            if (bordeDerecho != null)
+            {
+                Vector2 posBorde = bordeDerecho.position;
+                float dx = Mathf.Abs(posicion.x - posBorde.x);
+                float dy = Mathf.Abs(posicion.y - posBorde.y);
+
+                bool colisionX = dx < (anchoBorde + radioPelota);
+                bool colisionY = dy < (altoBorde + radioPelota);
+
+                if (colisionX && colisionY)
+                {
+                    Debug.Log("Colisión con borde derecho");
+
+                    // Ajustar posición fuera del borde
+                    posicion.x = posBorde.x + (posicion.x < posBorde.x ? -(anchoBorde + radioPelota) : (anchoBorde + radioPelota));
+
+                    // Rebote horizontal con límite de velocidad mínima
+                    velocidad.x = -velocidad.x * reboteBorde;
+                    if (Mathf.Abs(velocidad.x) < 0.5f)
+                        velocidad.x = Mathf.Sign(velocidad.x) * 0.5f;
+
+                    // Suavizar velocidad vertical
+                    velocidad.y *= 0.8f;
+                }
             }
 
             // Detener si la velocidad es muy baja
@@ -114,6 +173,7 @@ public class Lanzador : MonoBehaviour
 
             transform.position = posicion;
         }
+
         // Limitar horizontalmente
         if (posicion.x <= limiteIzquierdo)
         {
@@ -133,8 +193,8 @@ public class Lanzador : MonoBehaviour
             posicion.y = limiteSuperior;
             velocidad.y *= -0.6f;
         }
-
     }
+
 
 
 
