@@ -18,6 +18,7 @@ public class Lanzador : MonoBehaviour
     public float gravedadBase = -9.8f;           // Gravedad inicial
     public float gravedadMaxima = -20f;          // Gravedad límite (máxima)
     public float incrementoGravedadPorPunto = -5f;  // Cuánto se incrementa la gravedad por cada punto
+    public int incrementoCadaXPuntos = 3;  // Por ejemplo, cada 3 puntos
 
     [Header("Límites del área de juego")]
     public float limiteIzquierdo = -8f;
@@ -35,6 +36,14 @@ public class Lanzador : MonoBehaviour
     public float altoTablero = 1.5f;    // Mitad del alto del tablero
     public float radioPelota = 0.25f;   // Tamaño de la pelota
     public float reboteTablero = 0.6f;  // Rebote horizontal
+
+    [Header("Pared móvil")]
+    public Transform paredMovil;
+    public float anchoPared = 0.5f;  // Mitad del ancho de la pared
+    public float altoPared = 1.5f;   // Mitad del alto de la pared
+    public float rebotePared = 0.6f; // Coeficiente de rebote
+    public GameObject paredMovilGO; // referencia al GameObject completo de la pared móvil
+
 
     private Vector2 posicion;
     private bool enMovimiento = true;
@@ -114,6 +123,49 @@ public class Lanzador : MonoBehaviour
 
                         velocidad.x *= -reboteTablero;
                     }
+                }
+            }
+
+            // Colisión con pared móvil por todas las caras
+            if (paredMovil != null)
+            {
+                Vector2 posPelota = posicion;
+                Vector2 posPared = paredMovil.position;
+
+                float dx = posPelota.x - posPared.x;
+                float dy = posPelota.y - posPared.y;
+
+                float overlapX = (anchoPared + radioPelota) - Mathf.Abs(dx);
+                float overlapY = (altoPared + radioPelota) - Mathf.Abs(dy);
+
+                if (overlapX > 0 && overlapY > 0)
+                {
+                    // Hay colisión
+
+                    if (overlapX < overlapY)
+                    {
+                        // Rebote horizontal
+
+                        if (dx > 0)
+                            posicion.x = posPared.x + anchoPared + radioPelota;  // A la derecha
+                        else
+                            posicion.x = posPared.x - anchoPared - radioPelota;  // A la izquierda
+
+                        velocidad.x *= -rebotePared;
+                    }
+                    else
+                    {
+                        // Rebote vertical
+
+                        if (dy > 0)
+                            posicion.y = posPared.y + altoPared + radioPelota;  // Arriba
+                        else
+                            posicion.y = posPared.y - altoPared - radioPelota;  // Abajo
+
+                        velocidad.y *= -rebotePared;
+                    }
+
+                    Debug.Log("Colisión con pared móvil en alguna cara");
                 }
             }
 
@@ -224,7 +276,7 @@ public class Lanzador : MonoBehaviour
         enMovimiento = true;
     }
 
-    public int incrementoCadaXPuntos = 3;  // Por ejemplo, cada 3 puntos
+    
     public void RegistrarPunto()
     {
         if (!haAnotado)
@@ -238,6 +290,12 @@ public class Lanzador : MonoBehaviour
             {
                 gravedad = Mathf.Max(gravedadMaxima, gravedad + incrementoGravedadPorPunto);
                 Debug.Log($"Gravedad ajustada: {gravedad}");
+            }
+            // Activa la pared móvil cuando se llegue a 9 puntos (o más)
+            if (puntos >= 9 && paredMovilGO != null && !paredMovilGO.activeSelf)
+            {
+                paredMovilGO.SetActive(true);
+                Debug.Log("Pared móvil activada por dificultad.");
             }
         }
     }
