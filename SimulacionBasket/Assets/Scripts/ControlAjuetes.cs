@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ControlAjustes : MonoBehaviour
 {
@@ -13,16 +14,14 @@ public class ControlAjustes : MonoBehaviour
 
     void Start()
     {
-        // Validaciones para detectar campos sin asignar
         if (panelAjustes == null) Debug.LogError("panelAjustes no está asignado en el Inspector");
         if (sliderVolumen == null) Debug.LogError("sliderVolumen no está asignado en el Inspector");
         if (dropdownCalidad == null) Debug.LogError("dropdownCalidad no está asignado en el Inspector");
         if (togglePantallaCompleta == null) Debug.LogError("togglePantallaCompleta no está asignado en el Inspector");
 
-        // Si no has asignado el AudioSource en el Inspector, lo busca automáticamente
         if (audioJuego == null)
         {
-            GameObject audioObj = GameObject.Find("AudioMusica"); // Cambia el nombre si tu objeto es otro
+            GameObject audioObj = GameObject.Find("AudioMusica");
             if (audioObj != null)
             {
                 audioJuego = audioObj.GetComponent<AudioSource>();
@@ -33,7 +32,6 @@ public class ControlAjustes : MonoBehaviour
             }
         }
 
-        // Cargar preferencias guardadas
         if (sliderVolumen != null)
             sliderVolumen.value = PlayerPrefs.GetFloat("volumen", 1f);
         if (dropdownCalidad != null)
@@ -41,7 +39,6 @@ public class ControlAjustes : MonoBehaviour
         if (togglePantallaCompleta != null)
             togglePantallaCompleta.isOn = PlayerPrefs.GetInt("pantallaCompleta", 1) == 1;
 
-        // Suscribirse al evento para actualizar volumen al mover el slider
         if (sliderVolumen != null)
             sliderVolumen.onValueChanged.AddListener(ActualizarVolumen);
 
@@ -50,10 +47,10 @@ public class ControlAjustes : MonoBehaviour
 
     void ActualizarVolumen(float valor)
     {
-        AudioListener.volume = valor;  // Volumen global
+        AudioListener.volume = valor;
         if (audioJuego != null)
         {
-            audioJuego.volume = valor;  // Volumen específico del AudioSource
+            audioJuego.volume = valor;
         }
     }
 
@@ -79,13 +76,24 @@ public class ControlAjustes : MonoBehaviour
         PlayerPrefs.Save();
 
         AplicarAjustes();
+
         if (panelAjustes != null)
             panelAjustes.SetActive(false);
+
+        // Cambia aquí el nombre de la escena a "menu inicial" (todo en minúsculas y con espacio)
+        SceneManager.LoadScene("menu inicial");
     }
 
-    public void AbrirPanel()
+    public void VolverMenuInicial()
     {
-        if (panelAjustes != null)
-            panelAjustes.SetActive(true);
+        Debug.Log("Intentando cargar la escena 'menu inicial'...");
+        if (SceneManager.GetSceneByName("menu inicial").IsValid())
+        {
+            SceneManager.LoadScene("menu inicial");
+        }
+        else
+        {
+            Debug.LogError("La escena 'menu inicial' NO está agregada en Build Settings o el nombre es incorrecto.");
+        }
     }
 }
