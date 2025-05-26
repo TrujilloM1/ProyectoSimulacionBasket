@@ -287,6 +287,9 @@ public class Lanzador : MonoBehaviour
     public int score = 0;                 // Puntaje total acumulado
     public int puntosPorCesta = 10;       // Puntos que vale cada cesta
     private bool paredActivada = false;  // Agrega esta variable en la clase
+
+    public NotificadorUI notificadorGravedad;
+    public NotificadorUI notificadorCanasta;
     public void RegistrarPunto()
     {
         if (!haAnotado)
@@ -296,11 +299,20 @@ public class Lanzador : MonoBehaviour
             haAnotado = true;
             Debug.Log($"¡Canasta! Cestas: {puntos}, Score: {score}");
 
+            if (notificadorCanasta != null)
+            {
+                notificadorCanasta.MostrarNotificacion("Anotaste!");
+            }
+
             // Aumenta la gravedad solo cuando puntos es múltiplo de incrementoCadaXPuntos
             if (puntos % incrementoCadaXPuntos == 0)
             {
                 gravedad = Mathf.Max(gravedadMaxima, gravedad + incrementoGravedadPorPunto);
                 Debug.Log($"Gravedad ajustada: {gravedad}");
+                if (notificadorGravedad != null)
+                {
+                    notificadorGravedad.MostrarNotificacion("^Gravedad Aumentada^");
+                }
             }
             // Activar movimiento de la pared móvil cuando puntos >= 9
             if (puntos >= 6 && paredMovilGO != null && !paredActivada)
